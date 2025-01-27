@@ -1,6 +1,6 @@
 /*------------------------ About me ------------------------*/
 .about-me {
-    height: 100vh;
+    min-height: 100vh;
     padding: 50px 0;
     /* background-color: #f9f9f9; */
     background: linear-gradient(320deg, #ffffff, #ffffff 70%, var(--purple));
