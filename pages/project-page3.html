@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <title>Portfolio</title>
 </head>
-<body id="home"> 
+<body> 
     <nav class="nav">
         <div class="container">
             <div class="nav-row">
-                <a href="./index.html#projects" class="logo">
-                    <img src="./img/home.png" alt="Home" class="logo-img">
+                <a href="../index.html#projects" class="back">
+                    <img src="../img/home.png" alt="Home" class="logo-img">
                     Back
                 </a>
                 <ul class="nav-list">
@@ -23,56 +23,53 @@
         </div>
     </nav>
 
-
-    
-    
     <main class="section" id="projects">
         <div class="container">
             <div class="project-details">
                 <h1 class="title-1" data-aos="fade-up">Toyota Analysis</h1>
-                <span class="project-title" data-aos="fade-up" data-aos-delay="200">
-                    In this project, I developed a server-side application for managing daily calorie consumption using the following technologies and tools:
-                    Node.js and Express.js: For building a RESTful web service and routing requests. 
-                    MongoDB: As a database to store user information and calorie consumption data. 
-                    Postman: For testing API requests (GET, POST) and verifying server functionality. 
-                    JSON: For data exchange between the server and client. Git and GitHub: For version control and collaboration. Key features of the application:
-                    Adding calorie intake records via API requests. Generating reports on consumed calories categorized by meal type (breakfast, lunch, dinner, other). 
-                    Managing users and retrieving their data through REST API.
-                </span>
+                <div class="project-content">
+                    <div class="l"><img src="../img/Toyota Analysis.png" class="project-details-img" data-aos="fade-up" data-aos-delay="300" alt=""></div>
+                    <div class="r">
+                        <span class="project-title" data-aos="fade-up" data-aos-delay="200">
+                            In this project, I developed a server-side application for managing daily calorie consumption using the following technologies and tools:
+                            Node.js and Express.js: For building a RESTful web service and routing requests. 
+                            MongoDB: As a database to store user information and calorie consumption data. 
+                            Postman: For testing API requests (GET, POST) and verifying server functionality. 
+                            JSON: For data exchange between the server and client. Git and GitHub: For version control and collaboration. Key features of the application:
+                            Adding calorie intake records via API requests. Generating reports on consumed calories categorized by meal type (breakfast, lunch, dinner, other). 
+                            Managing users and retrieving their data through REST API.
+                        </span>
+                    </div>
+                </div>
                 
-                <img src="./img/Toyota Analysis.png" class="project-details-img" data-aos="fade-up" data-aos-delay="300" alt="">
-
                 <div class="project-tools" data-aos="fade-up" data-aos-delay="200">
-                    <p> <span class="tools">Tools:</span> Python, Beautiful Soup, Pandas, and Scikit-Learn, ML model</p>
+                    <p> <span class="tools">Tools:</span> &nbsp;Python, Beautiful Soup, Pandas, and Scikit-Learn, ML model</p>
                 </div>
 
                 <a href="https://github.com/antonbroker/Toyota-Analysis" class="btn-outline">
-                    <img src="./img/github.png" alt="" class="btn-img">
+                    <img src="../img/github.png" alt="" class="btn-img">
                     <span class="btn-text">GitHub repo</span>
                 </a>
-
-
             </div>
         </div>
     </main>
   
-    
     <footer class="footer" id="contacts">
             <div class="footer-wrapper">
                 <ul class="social">
                     <li class="social-item">
-                        <a href="#">
-                            <img src="./img/instagram.png" alt="Link">
+                        <a href="mailto:iosifov.a.14@gmail.com">
+                            <img src="../img/mail.png" alt="Link" class="mail-img">
                         </a>
                     </li>
                     <li class="social-item">
                         <a href="https://www.github.com/antonbroker">
-                            <img src="./img/github.png" alt="Link">
+                            <img src="../img/github.png" alt="Link">
                         </a>
                     </li>
                     <li class="social-item">
                         <a href="https://www.linkedin.com/in/anton-iosifov/">
-                            <img src="./img/linkedin.png" alt="Link">
+                            <img src="../img/linkedin.png" alt="Link">
                         </a>
                     </li>
                 </ul>
@@ -84,7 +81,7 @@
     </footer>
 
 
-    <script src="index.js"></script>
+    <script src="../js/index.js"></script>
     <script>
         
         AOS.init({

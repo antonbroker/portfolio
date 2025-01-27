@@ -1,0 +1,41 @@
+/*------------------------ About me ------------------------*/
+.about-me {
+    height: 100vh;
+    padding: 50px 0;
+    /* background-color: #f9f9f9; */
+    background: linear-gradient(320deg, #ffffff, #ffffff 70%, var(--purple));
+    /* min-height: 915px; */
+}
+
+.container-about-me {
+    margin-top: 40px;
+    margin: 0px 200px;
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+
+.about-me-photo {
+    flex: 1;
+    padding-top: 160px;
+}
+
+.about-me-img {
+    width: 400px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.about-me-text {
+    flex: 2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+.about-me-text p {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,40 @@
+/*------------------ Footer --------------- */
+.footer {
+    padding: 60px 0 50px;
+    background: var(--black);
+    color: var(--white);
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.social-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.social-item:active {
+    transform: translateY(2px) scale(0.95); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.copyright {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.mail-img {
+    width: 38px;
+}

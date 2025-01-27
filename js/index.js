@@ -22,21 +22,21 @@ document.querySelector('.logo').addEventListener('click', function (e) {
 });
 
 
-document.querySelectorAll('.nav-list-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault(); 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+// document.querySelectorAll('.nav-list-link').forEach(link => {
+//     link.addEventListener('click', function (e) {
+//         e.preventDefault(); 
+//         const targetId = this.getAttribute('href').substring(1);
+//         const targetElement = document.getElementById(targetId);
 
-        if (targetElement) 
-        {
-            targetElement.scrollIntoView({
-                behavior: 'smooth', 
-                block: 'start' // Прокручиваем до начала элемента
-            });
-        }
-    });
-});
+//         if (targetElement) 
+//         {
+//             targetElement.scrollIntoView({
+//                 behavior: 'smooth', 
+//                 block: 'start' // Прокручиваем до начала элемента
+//             });
+//         }
+//     });
+// });
 
 
 fetch('http://localhost:8000/php/server.php?page=index')
