@@ -38,3 +38,16 @@
 .mail-img {
     width: 38px;
 }
+
+@media (max-width: 768px) {
+    .footer {
+      padding: 20px 10px;
+    }
+    .social {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+    .copyright {
+      font-size: 14px;
+    }
+  }

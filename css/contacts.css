@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 50px;
+    min-height: 100vh;
     
     padding: 0px 170px 0;
     background: linear-gradient(100deg, #ffffff, var(--purple)); /* Белый и светло-пурпурный */
@@ -170,4 +171,25 @@
     color: #171718;
     font-size: 40px;
     font-weight: 500;
+}
+
+
+.success-message {
+    display: none;
+    background: #272626;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.success-message h2 {
+    margin-bottom: 10px;
+    font-size: 2rem; /* Размер заголовка */
+    color: #4caf50; /* Зеленый цвет для акцента */
+}
+
+.success-message p {
+    font-size: 1.2rem;
 }

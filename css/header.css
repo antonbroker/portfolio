@@ -1,12 +1,12 @@
 /*------------------------------  Header  ----------------------------------*/
 
 .header {
-    min-height: 100vh;
+    margin-top: 68px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    /* min-height: 915px; */
+    min-height: 100vh;
     background-color: var(--dark-bg);
     background-image: url('./../img/header-background.png');
     background-repeat: no-repeat;
