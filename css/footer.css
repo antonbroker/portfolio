@@ -3,7 +3,6 @@
     padding: 60px 0 50px;
     background: var(--black);
     color: var(--white);
-    width: 100%;
 }
 
 .footer-wrapper {
@@ -11,7 +10,6 @@
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
-    max-width: 1200px;
 }
 
 .social {
