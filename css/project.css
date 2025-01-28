@@ -85,7 +85,7 @@
     color: var(--purple);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
     .project-details {
         min-width: 100%; /* Убедитесь, что ширина секции адаптивная */
         text-align: center; /* Центрируем содержимое */

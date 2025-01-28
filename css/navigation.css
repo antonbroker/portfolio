@@ -105,3 +105,31 @@
 .nav-list-link:hover::before {
     width: 100%;
 }
+
+
+@media (max-width: 768px) {
+    .nav-row {
+        column-gap: 10px; /* Уменьшаем расстояние между элементами */
+        padding: 0 10px; /* Уменьшаем отступы */
+    }
+
+    .nav-list {
+        font-size: 14px; /* Уменьшаем размер текста */
+    }
+
+    .logo {
+        font-size: 16px; /* Уменьшаем логотип */
+    }
+}
+
+@media (max-width: 480px) {
+    
+
+    .nav-list {
+        font-size: 12px; /* Еще меньше текст для компактности */
+    }
+
+    .nav-row {
+        column-gap: 5px; /* Минимальное расстояние между элементами */
+    }
+}

@@ -62,8 +62,8 @@ document.querySelectorAll('.nav-list-link').forEach(anchor => {
     });
 });
 
-document.getElementById('form').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Остановить стандартное поведение формы
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
@@ -76,11 +76,12 @@ document.getElementById('form').addEventListener('submit', async function (e) {
         });
 
         if (response.ok) {
-            // Скрыть форму и показать сообщение об успехе
+            
             document.getElementById('form').style.display = 'none';
             document.getElementById('success-message').style.display = 'block';
         } else {
-            alert('There was an issue sending your message. Please try again later.');
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message || 'There was an issue sending your message.'}`);
         }
     } catch (error) {
         console.error('Error:', error);
