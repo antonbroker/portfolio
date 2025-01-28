@@ -64,3 +64,9 @@
     color: var(--white);
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .skills-section {
+      width: 100%; /* Увеличиваем ширину на мобильных */
+    }
+}
