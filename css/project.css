@@ -1,12 +1,14 @@
 /*---- Page for project ----*/
 
+.container {
+    margin: 0 auto;
+}
 .project-details {
     /* max-width: 1000px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-width: 1300px;
 }
 
 .project-title {
@@ -86,48 +88,54 @@
 }
 
 @media (max-width: 768px) { 
+
+    .title-1 {
+        font-size: 40px; 
+        margin-top: 0px;
+        margin-bottom: 40px;
+    }
     .project-details {
-        min-width: 100%; /* Убедитесь, что ширина секции адаптивная */
-        text-align: center; /* Центрируем содержимое */
-        padding: 20px; /* Уменьшаем отступы */
+        min-width: 100%;
+        text-align: center;
+        padding: 20px;
     }
 
     .project-content {
-        flex-direction: column; /* Располагаем элементы вертикально */
-        align-items: center; /* Центрируем содержимое */
-        gap: 20px; /* Уменьшаем промежутки между элементами */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
     .l {
-        max-width: 90%; /* Ограничиваем ширину изображения */
+        max-width: 90%;
     }
 
     .project-details-img {
-        max-width: 100%; /* Убедитесь, что изображение адаптивное */
-        height: auto; /* Сохраняем пропорции изображения */
+        max-width: 100%;
+        height: auto;
     }
 
     .r {
-        padding: 0; /* Убираем отступы текста */
-        text-align: center; /* Центрируем текст */
-        font-size: 16px; /* Уменьшаем шрифт текста */
+        padding: 0;
+        text-align: center;
+        font-size: 16px;
     }
 
     .project-title {
-        font-size: 18px; /* Уменьшаем размер шрифта */
-        line-height: 1.5; /* Увеличиваем читаемость */
+        font-size: 18px;
+        line-height: 1.5;
     }
 
     .project-tools {
-        font-size: 16px; /* Уменьшаем размер текста для стека технологий */
-        margin-top: 20px; /* Добавляем отступ сверху */
+        font-size: 16px;
+        margin-top: 20px;
     }
 
     .btn-outline {
-        margin-top: 20px; /* Отступ для кнопки */
+        margin-top: 20px;
     }
 
     .btn-text {
-        font-size: 14px; /* Уменьшаем текст кнопки */
+        font-size: 14px;
     }
 }
