@@ -1,6 +1,9 @@
 /*------------------------------  Header  ----------------------------------*/
 
 .header {
+    left: 0;
+    top: 0;
+    width: 100%;
     margin-top: 68px;
     display: flex;
     justify-content: center;
@@ -75,6 +78,7 @@
 
 @media (max-width: 768px) {
     .header {
-      width: 100%; /* Увеличиваем ширину на мобильных */
+      min-width: 100vh; /* Увеличиваем ширину на мобильных */
+      min-height: 100vh;
     }
 }

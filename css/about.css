@@ -15,7 +15,7 @@
 }
 
 .about-me-photo {
-    flex: 0 0 auto;
+    flex: 1;
     padding-top: 160px;
 }
 
@@ -61,6 +61,6 @@
 
 @media (max-width: 768px) {
     .about-me {
-      width: 100%; /* Увеличиваем ширину на мобильных */
+      min-width: 100vh; /* Увеличиваем ширину на мобильных */
     }
 }
