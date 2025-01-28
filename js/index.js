@@ -8,14 +8,20 @@ AOS.init({
     offset: 50,
 });
 
+
 document.querySelector('.read-more-btn').addEventListener('click', function () {
     const moreText = document.querySelector('.more-text');
+    const aboutSection = document.querySelector('#about'); // Выбираем секцию About
+
     if (moreText.style.display === 'none' || !moreText.style.display) {
         moreText.style.display = 'inline';
         this.textContent = 'Read Less';
     } else {
         moreText.style.display = 'none';
         this.textContent = 'Read More';
+
+        // Прокрутка к началу секции About
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
 });
 
