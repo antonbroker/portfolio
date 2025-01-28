@@ -60,7 +60,30 @@
 }
 
 @media (max-width: 768px) {
-    .about-me {
-      min-width: 100vh; /* Увеличиваем ширину на мобильных */
+    .container-about-me {
+        flex-direction: column; /* Элементы располагаются вертикально */
+        margin: 20px; /* Уменьшаем отступы */
+        gap: 20px; /* Уменьшаем промежутки */
+    }
+
+    .about-me-photo {
+        padding-top: 0; /* Убираем верхний отступ для фото */
+        display: block;
+        justify-content: center; /* Центрируем фото */
+        
+    }
+
+    .about-me-img {
+        width: 80%; /* Уменьшаем размер фото для мобильных */
+        max-width: 300px; /* Ограничиваем максимальную ширину */
+    }
+
+    .about-me-text {
+        font-size: 18px; /* Уменьшаем размер текста */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .read-more-btn {
+        font-size: 16px; /* Увеличиваем кнопку для удобства */
     }
 }

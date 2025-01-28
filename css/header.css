@@ -78,7 +78,28 @@
 
 @media (max-width: 768px) {
     .header {
-      min-width: 100vh; /* Увеличиваем ширину на мобильных */
-      min-height: 100vh;
+        padding: 20px 10px; /* Уменьшаем отступы */
+    }
+
+    .header-wrapper {
+        max-width: 90%; /* Увеличиваем доступное пространство */
+    }
+
+    .header-title {
+        font-size: 28px; /* Уменьшаем шрифт для заголовка */
+    }
+
+    .header-title strong {
+        font-size: 32px; /* Уменьшаем размер "strong" текста */
+    }
+
+    .header-text {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .btn {
+        font-size: 14px; /* Делаем кнопку меньше */
+        height: 40px;
+        padding: 10px 20px;
     }
 }
