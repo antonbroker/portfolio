@@ -3,6 +3,7 @@
     padding: 60px 0 50px;
     background: var(--black);
     color: var(--white);
+    min-width: 100vh;
 }
 
 .footer-wrapper {

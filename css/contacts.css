@@ -193,3 +193,36 @@
 .success-message p {
     font-size: 1.2rem;
 }
+
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column-reverse; /* Разворачиваем элементы: форма сверху */
+        gap: 10px; /* Уменьшаем промежутки между элементами */
+        margin-top: 70px;
+    }
+
+    .container-form {
+        width: 100%; /* Форма занимает всю ширину */
+        padding: 30px 10px; /* Уменьшаем внутренние отступы */
+        margin: 0; /* Убираем внешние отступы */
+    }
+
+    .contacts {
+        text-align: center; /* Центрируем текст */
+        padding: 10px; /* Добавляем внутренний отступ */
+        margin-bottom: 30px;
+    }
+
+    .contacts h2 {
+        font-size: 20px; /* Уменьшаем размер шрифта */
+    }
+
+    .contacts h2 span {
+        font-size: 24px; /* Уменьшаем шрифт для заголовков внутри контактов */
+    }
+
+    .form {
+        max-width: none; /* Убираем ограничение по ширине */
+        box-shadow: none; /* Убираем тень для минималистичного вида */
+    }
+}

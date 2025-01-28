@@ -21,6 +21,19 @@ document.querySelector('.read-more-btn').addEventListener('click', function () {
 
 document.querySelector('.logo').addEventListener('click', function (e) {
     e.preventDefault();
+    const targetElement = document.querySelector('#home'); // id="back"
+
+    if (targetElement) {
+        
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start' 
+        });
+    }
+});
+
+document.querySelector('.logo').addEventListener('click', function (e) {
+    e.preventDefault();
     const targetElement = document.querySelector('#home'); // id="home"
 
     if (targetElement) {
@@ -74,6 +87,3 @@ document.getElementById('form').addEventListener('submit', async function (e) {
         alert('An error occurred. Please try again later.');
     }
 });
-
-
-
