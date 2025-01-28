@@ -72,3 +72,73 @@
     transform: translateY(2px) scale(0.95);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+
+@media (max-width: 768px) {
+    /* Адаптация для планшетов и телефонов */
+    .header {
+        padding: 20px 0; /* Уменьшенные отступы */
+        min-height: auto; /* Убрать фиксированную высоту */
+        background-size: cover; /* Фон покрывает экран */
+        background-position: center top; /* Центрируем фон */
+        width: 100%; /* Секция занимает всю ширину */
+    }
+
+    .header-wrapper {
+        padding: 0 15px; /* Отступы с краёв */
+        max-width: 100%; /* Убираем фиксированную ширину */
+        box-sizing: border-box; /* Гарантируем, что отступы учтены */
+    }
+
+    .header-title {
+        font-size: 28px; /* Уменьшение размера текста */
+        line-height: 1.3; /* Увеличение межстрочного интервала */
+    }
+
+    .header-title strong {
+        font-size: 32px; /* Уменьшение размера текста "Hi, my name is" */
+    }
+
+    .header-title em {
+        font-size: 32px; /* Убедимся, что акцент на имени уменьшается */
+    }
+
+    .header-text {
+        font-size: 16px; /* Уменьшение размера текста */
+        margin-bottom: 20px; /* Уменьшаем отступы */
+    }
+
+    .btn {
+        width: 100%; /* Кнопка растягивается на всю ширину */
+        font-size: 14px; /* Уменьшение текста в кнопке */
+        padding: 12px 10px; /* Отступы внутри кнопки */
+        box-sizing: border-box; /* Учитываем внутренние отступы */
+        text-align: center; /* Центрируем текст */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Адаптация для мобильных телефонов */
+    .header {
+        padding: 10px 0; /* Минимальные отступы */
+    }
+
+    .header-title {
+        font-size: 24px; /* Ещё меньше заголовок */
+    }
+
+    .header-title strong {
+        font-size: 26px; /* Меньше акцент на "Hi, my name is" */
+    }
+
+    .header-text {
+        font-size: 14px; /* Ещё меньше текст */
+    }
+
+    .btn {
+        font-size: 12px; /* Минимальный размер текста кнопки */
+        padding: 10px; /* Уменьшенная высота кнопки */
+        width: 90%; /* Кнопка занимает почти всю ширину, но с отступами */
+        margin: 0 auto; /* Центрируем кнопку */
+    }
+}
