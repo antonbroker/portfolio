@@ -84,3 +84,50 @@
 .tools {
     color: var(--purple);
 }
+
+@media (max-width: 768px) {
+    .project-details {
+        min-width: 100%; /* Убедитесь, что ширина секции адаптивная */
+        text-align: center; /* Центрируем содержимое */
+        padding: 20px; /* Уменьшаем отступы */
+    }
+
+    .project-content {
+        flex-direction: column; /* Располагаем элементы вертикально */
+        align-items: center; /* Центрируем содержимое */
+        gap: 20px; /* Уменьшаем промежутки между элементами */
+    }
+
+    .l {
+        max-width: 90%; /* Ограничиваем ширину изображения */
+    }
+
+    .project-details-img {
+        max-width: 100%; /* Убедитесь, что изображение адаптивное */
+        height: auto; /* Сохраняем пропорции изображения */
+    }
+
+    .r {
+        padding: 0; /* Убираем отступы текста */
+        text-align: center; /* Центрируем текст */
+        font-size: 16px; /* Уменьшаем шрифт текста */
+    }
+
+    .project-title {
+        font-size: 18px; /* Уменьшаем размер шрифта */
+        line-height: 1.5; /* Увеличиваем читаемость */
+    }
+
+    .project-tools {
+        font-size: 16px; /* Уменьшаем размер текста для стека технологий */
+        margin-top: 20px; /* Добавляем отступ сверху */
+    }
+
+    .btn-outline {
+        margin-top: 20px; /* Отступ для кнопки */
+    }
+
+    .btn-text {
+        font-size: 14px; /* Уменьшаем текст кнопки */
+    }
+}
