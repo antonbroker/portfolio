@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anton Iosifov - Portfolio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="theme-gradient">
+  <div class="bg-animation"></div>
+  <div class="floating-elements"></div>
+  <div class="scroll-indicator"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">Anton.dev</div>
+
+      <!-- Burger -->
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navlinks">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle">Switch Theme</button>
+    </div>
+  </nav>
+
+  <!-- Project section -->
+  <main class="section" id="projects">
+    <div class="container">
+      <div class="project-details">
+        <h1 class="title-1">e-Commerce Platform with AI</h1>
+
+        <div class="project-content">
+          <!-- Image -->
+          <div class="l">
+            <img src="../img/commerce.jpg" alt="e-Commerce Platform with AI" class="project-details-img"/>
+          </div>
+
+          <!-- Project's description -->
+          <div class="r">
+            <p class="project-title">
+                This project is a <b>full-stack e-commerce application</b> with an integrated <b>AI recommendation engine</b>.  
+                It allows users to browse products, add them to a shopping cart, proceed with checkout, and get personalized product suggestions.
+                <br /><br />
+                <b>Node.js & Express.js</b> — backend logic and RESTful API.<br />
+                <b>MongoDB</b> — storing products, users, and orders.<br />
+                <b>React</b> — building a dynamic and user-friendly storefront.<br />
+                <b>AI algorithms</b> — product recommendations and user personalization.
+                <br /><br />
+                <b>Key Features:</b><br />
+                • Product catalog with categories and search<br />
+                • Shopping cart and checkout process<br />
+                • Authentication and user accounts<br />
+                • AI-driven recommendations to boost user engagement<br />
+                • Secure payment and order history (planned)
+              </p>
+          </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="project-tech">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">AI</span>
+        </div>
+
+        <!-- GitHub button -->
+        <a href="#" target="_blank" class="btn-outline">
+          <img src="../img/github.png" alt="GitHub" class="btn-img" />
+          <span class="btn-text">Coming soon!</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="../js/index.js"></script>
+</body>
+</html>

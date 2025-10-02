@@ -1,227 +1,97 @@
-/*--------------------- Contacts -----------------------*/
-.contact-form {
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+  
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+  
+.contact-info.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+  
+.contact-link {
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 50px;
-    min-height: 100vh;
-    padding: 0px 170px 0;
-    background: linear-gradient(100deg, #ffffff, var(--purple)); /* Белый и светло-пурпурный */
-}
-
-.contact-form .left, 
-.contact-form .right {
-    flex: 1;
-    background: #f3e5f5; /* Очень светлый пурпурный */
-}
-
-.container-form {
-    margin: 50px 0;
-    padding: 70px 0 0 0;
-    width: 33%;
-}
-
-.form {
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 10px auto;
-    padding: 30px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background: var(--black);
-}
-.contact-form h2 {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: var(--purple);
-}
-.contact-form label {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    color: var(--white);
-    margin-bottom: 5px;
-    display: block;
-}
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid var(--black-border);
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    background-color: var(--white);
-    color: var(--text-color);
-    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.form input[type="text"]:focus,
-.form input[type="email"]:focus,
-.form textarea:focus {
-    outline: none;
-    border-color: var(--purple);
-    box-shadow: 0px 0px 8px rgba(92, 98, 236, 0.5);
-}
-.form textarea {
-    resize: none;
-    height: 100px;
-}
-.form button {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--purple);
-    color: var(--white);
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-.form button:hover {
-    background-color: var(--purple);
-    box-shadow: 0px 5px 15px rgba(92, 98, 236, 0.3);
-}
-.form button:active {
-    background-color: var(--purple);
-    transform: translateY(2px);
-    box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-.left {
-    width: 33%;
-    max-width: 400px;
-}
-.back {
-    display: inline-flex;
-    color: var(--white);
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
+    gap: 10px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
     text-decoration: none;
-    column-gap: 5px;
-    transition: opacity 0.3s ease-in-out;
-    position: relative;
-    padding: 0px 8px 0px 0px;
-    border-radius: 10px; /* Округленные углы */   
-    z-index: 1;
-    background: var(--primary-color); /* Цвет фона кнопки */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Плавный переход для нажатия */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
+    color: var(--text);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.logo-img {
-    margin-left: 8px;
-    margin-top: 1px;
-    width: 20px; 
-    height: 20px; 
+  
+.contact-link:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
 }
-.back:active {
-    transform: translateY(2px) scale(0.95); /* Эффект нажатия */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшение тени */
+  
+.contact-link i {
+    font-size: 1.2rem;
 }
-.back::before {
-    content: "";
+
+.floating-elements {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px; /* Округленные углы */
-    box-sizing: border-box; /* Включение бордера в размеры */
-    border: 2px solid var(--white); /* Создаем белую рамку */
-    transform: scale(1); /* Убедиться, что размер совпадает */
-    z-index: -1; /* Позади основного содержимого */
-    pointer-events: none; /* Исключить из событий */
-    opacity: 0; /* Скрыто по умолчанию */
-    clip-path: inset(0% 100% 0% 0%); /* Скрываем весь элемент */
-    transition: opacity 0.3s ease-in-out; /* Плавное появление */
+    pointer-events: none;
+    overflow: hidden;
+}
+      
+.floating-element {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: float 15s linear infinite;
+    opacity: 0.7;
 }
 
-.back:hover::before {
-    opacity: 1; /* Включаем видимость рамки */
-    clip-path: inset(0% 0% 0% 0%); /* Постепенное заполнение рамки */
-    transition: clip-path 0.5s ease-in-out; /* Эффект ползущей рамки */
+.floating-element:nth-child(2n) {
+    background: var(--accent-alt);
+    animation-duration: 20s;
+}
+      
+.floating-element:nth-child(3n) {
+    width: 6px;
+    height: 6px;
+    animation-duration: 25s;
 }
 
-
-
-.success-message {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: var(--purple);
-    padding: 20px;
-    border: 2px solid var(--purple);
-    border-radius: 10px;
-    background-color: #f3e5f5;
-    margin-top: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.contacts h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-}
-.contacts h2 span {
-    color: #171718;
-    font-size: 40px;
-    font-weight: 500;
-}
-
-
-.success-message {
-    display: none;
-    background: #272626;
-    color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.success-message h2 {
-    margin-bottom: 10px;
-    font-size: 2rem; /* Размер заголовка */
-    color: #4caf50; /* Зеленый цвет для акцента */
-}
-
-.success-message p {
-    font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-    .contact-form {
-        flex-direction: column-reverse; /* Разворачиваем элементы: форма сверху */
-        gap: 10px; /* Уменьшаем промежутки между элементами */
-        margin-top: 70px;
+@keyframes float {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
     }
-
-    .container-form {
-        width: 50vh; /* Форма занимает всю ширину */
-        padding: 30px 10px; /* Уменьшаем внутренние отступы */
-        margin: 0; /* Убираем внешние отступы */
+    10% {
+        opacity: 1;
     }
-
-    .contacts {
-        text-align: center; /* Центрируем текст */
-        padding: 10px; /* Добавляем внутренний отступ */
-        margin-bottom: 30px;
+    90% {
+        opacity: 1;
     }
-
-    .contacts h2 {
-        font-size: 20px; /* Уменьшаем размер шрифта */
-    }
-
-    .contacts h2 span {
-        font-size: 24px; /* Уменьшаем шрифт для заголовков внутри контактов */
-    }
-
-    .form {
-        max-width: none; /* Убираем ограничение по ширине */
-        box-shadow: none; /* Убираем тень для минималистичного вида */
+    to {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
     }
 }

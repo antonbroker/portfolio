@@ -1,238 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <!--DNS: namecheap-->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <title>Portfolio</title>
-  </head>
-  <body id="home">
-    <nav class="nav">
-      <div class="container">
-        <div class="nav-row">
-          <a href="#home" class="logo">
-            <img src="./img/home.png" alt="Home" class="logo-img" />
-            Home
-          </a>
-          <ul class="nav-list">
-            <li class="nav-list-item">
-              <a href="#about" class="nav-list-link">About</a>
-            </li>
-            <li class="nav-list-item">
-              <a href="#skills" class="nav-list-link">Tools</a>
-            </li>
-            <li class="nav-list-item">
-              <a href="#projects" class="nav-list-link">Projects</a>
-            </li>
-            <li class="nav-list-item">
-              <a href="./pages/contact.html" class="nav-list-link">
-                Contacts
-              </a>
-            </li>
-          </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton Iosifov - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <link rel="stylesheet" href="./css/contacts.css">
+    <link rel="stylesheet" href="./css/nav.css">
+</head>
+<body class="theme-cyberpunk">
+    <div class="bg-animation"></div>
+    <div class="scroll-indicator"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Anton.dev</div>
+
+            <!-- Burger for mobile version-->
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navlinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="themeToggle">Switch</button>
         </div>
-      </div>
     </nav>
 
-    <header class="header">
-      <div class="header-wrapper" data-aos="fade-in">
-        <h1 class="header-title" data-aos="fade-up" data-aos-delay="200">
-          <strong>Hi, my name is <em>Anton</em></strong>
-          <br />
-          Software Engineer
-        </h1>
-        <div class="header-text" data-aos="fade-up" data-aos-delay="400">
-          <p>with passion for learning and creating.</p>
+    <!-- SECTION "Home" -->
+    <section id="home" class="hero">
+        <div class="floating-elements"></div>
+        <div class="section-content">
+            <div class="hero-content">
+                <h1 class="hero-title">Anton Iosifov</h1>
+                <h2 class="hero-subtitle">Full-Stack Engineer</h2>
+                <p class="hero-description">
+                Dynamic and resourceful developer with passion for learning and creating. 
+                Specializing in backend, frontend, and cutting-edge technologies.
+                </p>
+                <a href="#contact" class="cta-button">Let's Connect</a>
+            </div>
         </div>
-        <a href="./files/resume-anton-iosifov.pdf" class="btn" target="_blank" data-aos="zoom-in" data-aos-delay="600">
-          Download CV
-        </a>
-      </div>
-    </header>
-
-    <section class="about-me" id="about">
-      <div class="container-about-me">
-        <div class="about-me-photo" data-aos="fade-right">
-          <img src="./img/my-photo.png" alt="Photo" class="about-me-img" />
-        </div>
-        <div class="about-me-text" data-aos="fade-left">
-          <h2 class="title-1">About Me</h2>
-          <p>
-            Hello, my name is Anton. I am a dynamic and resourceful software developer with experience in both backend and frontend development, 
-            as well as a strong foundation in machine learning. I graduated from the Faculty of Computer Science, 
-            where I laid the groundwork for my professional growth.<br>
-            <span class="more-text">
-              <br>
-              I specialize in solving complex problems, developing efficient applications using modern programming languages and frameworks, and implementing technologies that enhance workflows.<br>
-              I have honed my problem-solving, critical thinking, and teamwork skills through various academic projects and collaboration with industry professionals.
-              <br><br>
-              I enjoy exploring new tools and participating in exciting projects that push the boundaries of technology. 
-              I am always eager to contribute to the team's success and deliver meaningful projects that create real value.
-            </span>
-          </p>
-          <button class="read-more-btn">Read More</button>
-        </div>
-      </div>
     </section>
 
-    <section class="skills-section" id="skills">
-      <div class="container">
-        <h2 class="skills-title" data-aos="zoom-in">Tools</h2>
-        <div class="skills-grid">
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-            <img src="./img/html.png" alt="HTML" class="skill-icon" />
-            <h3 class="skill-name">html</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
-            <img src="./img/css.png" alt="Css" class="skill-icon" />
-            <h3 class="skill-name">css</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="./img/sass.png" alt="Sass" class="skill-icon" />
-            <h3 class="skill-name">sass</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
-            <img src="./img/javascript.png" alt="JavaScript" class="skill-icon" />
-            <h3 class="skill-name">javascript</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-            <img src="./img/react.png" alt="React JS" class="skill-icon" />
-            <h3 class="skill-name">react js</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-            <img src="./img/nodejs.png" alt="Node JS" class="skill-icon" />
-            <h3 class="skill-name">node js</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="450">
-            <img src="./img/bootstrap.png" alt="Bootstrap" class="skill-icon" />
-            <h3 class="skill-name">bootstrap</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
-            <img src="./img/sql.png" alt="MongoDB" class="skill-icon" />
-            <h3 class="skill-name">sql</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="550">
-            <img src="./img/docker.png" alt="Docker" class="skill-icon" />
-            <h3 class="skill-name">docker</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
-            <img src="./img/c++.png" alt="C++" class="skill-icon" />
-            <h3 class="skill-name">с++</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="650">
-            <img src="./img/python.png" alt="Python" class="skill-icon" />
-            <h3 class="skill-name">python</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="700">
-            <img src="./img/php.png" alt="Php" class="skill-icon" />
-            <h3 class="skill-name">php</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="750">
-            <img src="./img/c.png" alt="C" class="skill-icon" />
-            <h3 class="skill-name">с</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="800">
-            <img src="./img/git.png" alt="C" class="skill-icon" />
-            <h3 class="skill-name">git</h3>
-          </div>
-          <div class="skill-card" data-aos="zoom-in" data-aos-delay="850">
-            <img src="./img/cmd.png" alt="C" class="skill-icon" />
-            <h3 class="skill-name">bash scripts</h3>
-          </div>
+    <!-- SECTION "About" -->
+    <section id="about" class="about">
+        <div class="section-content">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2 class="about-title">About Me</h2>
+                    <p class="about-text">
+                        Hello, my name is Anton. I am a dynamic and resourceful software developer with experience in both backend and frontend development, as well as a strong foundation in machine learning.
+                    </p>
+                    <p class="about-text">
+                        I specialize in solving complex problems, developing efficient applications using modern programming languages and frameworks, and implementing technologies that enhance workflows.
+                    </p>
+                    <p class="about-text">
+                        I enjoy exploring new tools and participating in exciting projects that push the boundaries of technology. I am always eager to contribute to the team's success and deliver meaningful projects that create real value.
+                    </p>
+                </div>
+                <div class="about-image">
+                <div class="image-decoration"></div>
+                <div class="image-decoration"></div>
+                <img src="./img/1758025908213.jpg" alt="Anton Iosifov" class="profile-image" />
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <main class="section" id="projects">
-      <div class="container">
-        <h2 class="title-1" data-aos="fade-up">Projects</h2>
-        <h3 class="projects-text">
-          Here are some of the projects I've worked on, showcasing my skills in software development, web design, and problem-solving. 
-          Each project reflects my dedication to creating efficient and innovative solutions for real-world challenges.
-          Explore these projects to learn more about my experience and expertise in full-stack development, system design, and user-centric applications.
-        </h3>
-        <ul class="projects">
-          <li class="project" data-aos="fade-right" data-aos-delay="100">
-            <a href="./pages/project-page1.html">
-              <img
-                src="./img/project1-img.png"
-                alt="Project img"
-                class="project-img"
-              />
-              <h3 class="projects-title">Daily Calorie <br> Management</h3>
-            </a>
-          </li>
-          <li class="project" data-aos="fade-left" data-aos-delay="200">
-            <a href="./pages/project-page2.html">
-              <img
-                src="./img/project2-img.png"
-                alt="Project img"
-                class="project-img"
-              />
-              <h3 class="projects-title">Blockchain <br> Voting System </h3>
-            </a>
-          </li>
-          <li class="project" data-aos="fade-right" data-aos-delay="300">
-            <a href="./pages/project-page3.html">
-              <img
-                src="./img/Toyota Analysis.png"
-                alt="Project img"
-                class="project-img"
-              />
-              <h3 class="projects-title">Toyota <br> Analysis</h3>
-            </a>
-          </li>
-          <li class="project" data-aos="fade-left" data-aos-delay="400">
-            <a href="./pages/project-page4.html">
-              <img
-                src="./img/project4-img.png"
-                alt="Project img"
-                class="project-img"
-              />
-              <h3 class="projects-title">Trading <br> Transactions</h3>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </main>
-
-    <footer class="footer" id="contacts">
-      <div class="footer-wrapper">
-        <ul class="social">
-          <li class="social-item">
-            <a href="mailto:iosifov.a.14@gmail.com" target="_blank">
-              <img src="./img/mail.png" alt="Link" class="mail-img"/>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://www.github.com/antonbroker" target="_blank">
-              <img src="./img/github.png" alt="Link" />
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/anton-iosifov/" target="_blank">
-              <img src="./img/linkedin.png" alt="Link" />
-            </a>
-          </li>
-        </ul>
-
-        <div class="copyright">
-          <p>© 2025 Anton Iosifov</p>
+    <!-- SECTION "Skills" -->
+    <section id="skills" class="skills">
+        <div class="section-content">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="skill-title">Backend Development</h3>
+                    <p class="skill-description">Building robust server-side applications.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3 class="skill-title">Frontend Development</h3>
+                    <p class="skill-description">Creating responsive, interactive user interfaces.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3 class="skill-title">Full-Stack Development</h3>
+                    <p class="skill-description">End-to-end development from DB to UI.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="skill-title">Problem Solving</h3>
+                    <p class="skill-description">Analyzing challenges and creating solutions.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-comments"></i></div>
+                    <h3 class="skill-title">Communication</h3>
+                    <p class="skill-description">Effective collaboration with teammates and stakeholders.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="skill-title">Adaptability</h3>
+                    <p class="skill-description">Quickly adjusting to new challenges and technologies.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </footer>
+    </section>
 
-    <script src="/js/index.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        easing: "ease-out-back",
-        once: false,
-        offset: 50,
-      });
-    </script>
-  </body>
+    <!-- SECTION "Projects" -->
+    <section id="projects" class="projects">
+        <div class="section-content">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- project spotify -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-headphones-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Spotify with AI</h3>
+                        <p class="project-description">Frontend project (in progress) — music streaming app clone with AI-powered playlist 
+                            recommendations and search. Focus on user interface and integration with external APIs.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">REST API</span>
+                                <span class="tech-tag">AI</span>
+                            </div>
+                        <div class="project-links">
+                            <a href="./projects/project-spotify.html" class="project-link">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project movie ticket booking system -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Movie Ticket Booking System</h3>
+                        <p class="project-description">RESTful API for Java Spring Boot for managing movies, sessions, and layers. Includes validation, tutorial, and documentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./projects/project-movie-system.html" class="project-link">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project e-Commerce -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">e-Commerce with AI</h3>
+                        <p class="project-description">Full-stack online store with product catalog, shopping cart, checkout, 
+                            and AI-powered product recommendations for personalized shopping experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./projects/project-e-Commerce.html" class="project-link">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project - Daily Calorie Management -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Daily Calorie Management</h3>
+                        <p class="project-description">Backend service for tracking daily calorie intake. Supports user management, meal categorization (breakfast, lunch, dinner, other), and generating summary reports via REST API.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./projects/project-dayli-calorie-tracker.html" class="project-link">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- project - parser -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Jurisdiction Data Parser</h3>
+                        <p class="project-description">PHP service for parsing and aggregating data on companies from different jurisdictions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">cURL</span>
+                            <span class="tech-tag">Regex</span>
+                            <span class="tech-tag">MySQL</span>
+                          </div>
+                        <div class="project-links">
+                            <a href="./projects/project-parser.html" class="project-link">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- project - portfolio -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">Modern, responsive portfolio with advanced animations and interactive elements showcasing development skills.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./projects/project-portfolio.html" class="project-link">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION "Contacts" -->
+    <section id="contact" class="contact">
+        <div class="floating-elements"></div>
+        <div class="section-content">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-info">
+                <p class="hero-description">Ready to collaborate on exciting projects.</p>
+                <div class="contact-links">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iosifov.a.14@gmail.com" class="contact-link" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://linkedin.com/in/anton-iosifov" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/antonbroker" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://wa.me/972534223948?text=Hi%20Anton,%20I%20would%20like%20to%20collaborate!" class="contact-link" target="_blank"><i class="fab fa-whatsapp"></i> Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/index.js"></script>
+</body>
 </html>
+
