@@ -1,0 +1,129 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.navbar.scrolled {
+  background: var(--bg-blur);
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link {
+  height: 52px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--text);
+}
+
+.navbar__link.active {
+  border-bottom-color: var(--text);
+}
+
+.navbar__theme-btn {
+  margin-left: 40px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  transition: all 0.2s;
+}
+
+.navbar__theme-btn:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.navbar__mob-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.navbar__mobile-menu {
+  background: var(--bg-menu);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+}
+
+.navbar__mob-link {
+  display: block;
+  padding: 13px 28px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  border-left: 2px solid transparent;
+}
+
+.navbar__mob-link.active {
+  color: var(--text);
+  border-left-color: var(--text);
+}
+
+@media (max-width: 820px) {
+  .desk {
+    display: none !important;
+  }
+  .mob {
+    display: block !important;
+  }
+}
+
+@media (min-width: 821px) {
+  .mob {
+    display: none !important;
+  }
+}

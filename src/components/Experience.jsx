@@ -1,46 +1,42 @@
 import { useInView } from "../hooks/useInView";
-import { Section, Cap, fade } from "./atoms";
+import { Section, Cap } from "./atoms";
 import { EXPERIENCE, EDUCATION } from "../data/cvData";
+import "../styles/experience.css";
 
-export function Experience({ t }) {
+export function Experience() {
   const [ref, iv] = useInView(0.1);
   return (
-    <Section id="experience" label="Experience" t={t}>
-      <div ref={ref} style={{ ...fade(iv) }}>
+    <Section id="experience" label="Experience">
+      <div ref={ref} className={`fade ${iv ? "visible" : ""}`}>
         {EXPERIENCE.map((e, i) => (
           <div key={i}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "baseline", marginBottom: 16, gap: 16, flexWrap: "wrap" }}>
+            <div className="exp-header">
               <div>
-                <div style={{ fontSize: "clamp(15px, 1.8vw, 18px)", fontWeight: 600, color: t.text, marginBottom: 3 }}>{e.role}</div>
-                <div style={{ fontSize: 12, color: t.muted, letterSpacing: "0.04em" }}>{e.company} · {e.type}</div>
+                <div className="exp-role">{e.role}</div>
+                <div className="exp-company">{e.company} · {e.type}</div>
               </div>
-              <span style={{ fontSize: 11, color: t.muted, fontFamily: "'Courier New', Courier, monospace", whiteSpace: "nowrap" }}>{e.period}</span>
+              <span className="exp-period">{e.period}</span>
             </div>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul className="bullet-list">
               {e.bullets.map((b, j) => (
-                <li key={j} style={{ display: "flex", gap: 10, marginBottom: 7 }}>
-                  <span style={{ color: t.muted, flexShrink: 0, fontSize: 12, marginTop: 3 }}>—</span>
-                  <span style={{ fontSize: 14, color: t.muted, lineHeight: 1.75 }}>{b}</span>
+                <li key={j} className="bullet-item">
+                  <span className="bullet-dash">—</span>
+                  <span className="bullet-text">{b}</span>
                 </li>
               ))}
             </ul>
           </div>
         ))}
-        <div style={{ marginTop: 56, paddingTop: 48, borderTop: `1px solid ${t.border}` }}>
-          <Cap t={t} style={{ display: "block", marginBottom: 28 }}>Education</Cap>
+        <div className="edu-section">
+          <Cap className="edu-label">Education</Cap>
           {EDUCATION.map((e, i) => (
-            <div key={i} style={{
-              display: "grid", gridTemplateColumns: "1fr auto", alignItems: "baseline", gap: 16,
-              marginBottom: i < EDUCATION.length - 1 ? 24 : 0,
-              paddingBottom: i < EDUCATION.length - 1 ? 24 : 0,
-              borderBottom: i < EDUCATION.length - 1 ? `1px solid ${t.border}` : "none",
-            }}>
+            <div key={i} className={`edu-entry ${i < EDUCATION.length - 1 ? "edu-entry--separated" : ""}`}>
               <div>
-                <div style={{ fontSize: 15, fontWeight: 600, color: t.text, marginBottom: 3 }}>{e.degree}</div>
-                <div style={{ fontSize: 12, color: t.muted }}>{e.school}</div>
-                <div style={{ fontSize: 11, color: t.muted, fontFamily: "'Courier New', Courier, monospace", marginTop: 4 }}>{e.note}</div>
+                <div className="edu-degree">{e.degree}</div>
+                <div className="edu-school">{e.school}</div>
+                <div className="edu-note">{e.note}</div>
               </div>
-              <span style={{ fontSize: 11, color: t.muted, fontFamily: "'Courier New', Courier, monospace", whiteSpace: "nowrap" }}>{e.period}</span>
+              <span className="exp-period">{e.period}</span>
             </div>
           ))}
         </div>

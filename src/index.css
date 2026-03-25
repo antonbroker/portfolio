@@ -17,57 +17,28 @@ em {
   font-style: italic;
 }
 
-/* Hero: кнопки по верху текста, контент шире */
-.hero-bottom {
-  align-items: flex-start !important;
+:root {
+  --bg: #F6F6F4;
+  --surface: #EEEEEC;
+  --border: #D8D8D5;
+  --border-h: #AEAEAB;
+  --text: #111110;
+  --muted: #888882;
+  --dimmed: #444440;
+  --inv: #F6F6F4;
+  --bg-blur: rgba(246,246,244,0.95);
+  --bg-menu: rgba(246,246,244,0.98);
 }
 
-@media (max-width: 820px) {
-  .sg {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-  .ai {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
-  }
-  .pr {
-    grid-template-columns: 36px 1fr 24px !important;
-    gap: 12px !important;
-  }
-  .pd {
-    grid-template-columns: 1fr !important;
-  }
-  .cg {
-    grid-template-columns: 1fr !important;
-  }
-  .h-sm {
-    display: none !important;
-  }
-  .hero-name-row {
-    grid-template-columns: 1fr !important;
-  }
-  .hero-side {
-    display: none !important;
-  }
-  .hero-strip {
-    grid-template-columns: 1fr !important;
-    gap: 6px !important;
-  }
-  .hero-bottom {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
-  }
-  .desk {
-    display: none !important;
-  }
-  .mob {
-    display: block !important;
-  }
-}
-
-@media (min-width: 821px) {
-  .mob {
-    display: none !important;
-  }
+[data-theme="dark"] {
+  --bg: #0A0A0A;
+  --surface: #131313;
+  --border: #222222;
+  --border-h: #383838;
+  --text: #DDDDD8;
+  --muted: #4E4E4A;
+  --dimmed: #888880;
+  --inv: #131313;
+  --bg-blur: rgba(10,10,10,0.95);
+  --bg-menu: rgba(10,10,10,0.98);
 }

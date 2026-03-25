@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { T } from "./tokens";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -9,41 +8,49 @@ import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ScrollLine } from "./components/ScrollLine";
+import "./styles/app.css";
 
 export default function App() {
   const [dark, setDark] = useState(false);
   const [active, setActive] = useState("home");
-  const t = dark ? T.dark : T.light;
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+  }, [dark]);
 
   useEffect(() => {
     const ids = ["home", "about", "stack", "projects", "experience", "contact"];
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { threshold: 0.3, rootMargin: "-52px 0px 0px 0px" }
-    );
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
+    const handleScroll = () => {
+      const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      if (atBottom) { setActive(ids[ids.length - 1]); return; }
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100) current = id;
+        }
+      }
+      setActive(current);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      <ScrollLine t={t} />
-      <div style={{ background: t.bg, color: t.text, minHeight: "100vh" }}>
-        <Navbar dark={dark} setDark={setDark} active={active} t={t} />
-        <Hero t={t} />
-        <About t={t} />
-        <Stack t={t} />
-        <Projects t={t} />
-        <Experience t={t} />
-        <Contact t={t} />
-        <Footer t={t} />
+      <ScrollLine />
+      <div className="grid-overlay" />
+      <div className="app-wrapper">
+        <Navbar dark={dark} setDark={setDark} active={active} />
+        <Hero />
+        <About />
+        <Stack />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
       </div>
     </>
   );

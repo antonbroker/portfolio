@@ -1,0 +1,70 @@
+.exp-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.exp-role {
+  font-size: clamp(15px, 1.8vw, 18px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.exp-company {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.exp-period {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+}
+
+.edu-section {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.edu-label {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.edu-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.edu-entry--separated {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-degree {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.edu-school {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.edu-note {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 4px;
+}

@@ -1,0 +1,17 @@
+.footer {
+  border-top: 1px solid var(--border);
+}
+
+.footer__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__text {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: 'Courier New', Courier, monospace;
+}
