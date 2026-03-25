@@ -1,7 +1,7 @@
 .stack__intro {
   font-size: 14px;
   color: var(--muted);
-  margin: 0 0 36px;
+  margin: 0 0 clamp(24px, 3vw, 36px);
   line-height: 1.7;
 }
 
