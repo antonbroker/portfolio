@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
 import { HR, Cap } from "./atoms";
+import { Gallery } from "./Gallery";
 import { PROJECTS } from "../data/cvData";
 import "../styles/projects.css";
 
@@ -13,7 +14,7 @@ export function Projects() {
         <div className="sg projects__header-grid">
           <div className="section-label"><Cap>Projects</Cap></div>
           <p className="projects__intro">
-            Two personal projects built end-to-end — architecture, implementation, deployment.
+            Personal projects built end-to-end — architecture, implementation, deployment.
           </p>
         </div>
       </div>
@@ -39,6 +40,7 @@ function ProjectRow({ p, open, toggle }) {
         <div className="pd">
           <div />
           <div>
+            {p.description && <p className="project-desc">{p.description}</p>}
             <div className="project-tags">
               {p.stack.map(s => (
                 <span key={s} className="project-tag">{s}</span>
@@ -53,14 +55,15 @@ function ProjectRow({ p, open, toggle }) {
               ))}
             </ul>
             <div className="project-links">
-              <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-link--primary">Live Demo</a>
-              <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link--secondary">GitHub</a>
+              {p.live && <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-link--primary">Live Demo</a>}
+              {p.github && <a href={p.github} target="_blank" rel="noopener noreferrer" className={p.live ? "project-link--secondary" : "project-link--primary"}>GitHub</a>}
             </div>
+            <Gallery images={p.screenshots} />
           </div>
           <div className="project-sidebar">
             <div className="project-sidebar__block">
               <Cap className="project-sidebar__label">Type</Cap>
-              <span className="project-sidebar__value">Personal Project</span>
+              <span className="project-sidebar__value">{p.type}</span>
             </div>
             <div className="project-sidebar__block">
               <Cap className="project-sidebar__label">Year</Cap>
@@ -68,7 +71,7 @@ function ProjectRow({ p, open, toggle }) {
             </div>
             <div className="project-sidebar__block">
               <Cap className="project-sidebar__label">Deploy</Cap>
-              <span className="project-sidebar__value">Render · Vercel</span>
+              <span className="project-sidebar__value">{p.deploy}</span>
             </div>
           </div>
         </div>

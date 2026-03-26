@@ -31,7 +31,7 @@ export function Hero() {
           </p>
           <div className="hero__buttons">
             <a href="#projects" className="hero__btn-primary">View Projects</a>
-            <a href="/Anton_Iosifov_CV.pdf" download className="hero__btn-secondary">Download CV</a>
+            <a href="/Anton_Iosifov_CV.pdf" target="_blank" rel="noopener noreferrer" className="hero__btn-secondary">View CV</a>
           </div>
         </div>
       </div>

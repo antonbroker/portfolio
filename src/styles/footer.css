@@ -1,13 +1,10 @@
-.footer {
-  border-top: 1px solid var(--border);
-}
-
 .footer__inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 18px clamp(20px, 4vw, 48px);
+  padding: 18px clamp(24px, 6vw, 80px);
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid var(--border);
 }
 
 .footer__text {

@@ -7,7 +7,7 @@ export function About() {
   return (
     <Section id="about" label="About">
       <div ref={ref} className={`ai fade ${iv ? "visible" : ""}`}>
-        <div>
+        <div className="about__left">
           <div className="about__img-wrapper">
             <img
               src="/img/1758025908213.jpg"
