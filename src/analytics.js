@@ -1,24 +1,23 @@
 /**
- * Optional visitor analytics (set env vars at build time).
+ * Optional analytics. Values come from Vite env at **build** time (set in GitHub Actions secrets for CI).
  *
- * Plausible: official NPM package is loaded only when VITE_PLAUSIBLE_DOMAIN is set
- * (matches Plausible "NPM installation" + verification).
+ * Plausible: we inject the official deferred script (same as the “Script” tab). Automated verification
+ * looks for this pattern; it also avoids shipping the NPM bundle without a configured domain.
  */
 
-export async function initAnalytics() {
+export function initAnalytics() {
   const plausibleDomain = import.meta.env.VITE_PLAUSIBLE_DOMAIN?.trim()
-  const plausibleEndpoint = import.meta.env.VITE_PLAUSIBLE_ENDPOINT?.trim()
-  const plausibleLocalhost =
-    import.meta.env.VITE_PLAUSIBLE_CAPTURE_LOCALHOST === 'true'
+  const plausibleScriptUrl =
+    import.meta.env.VITE_PLAUSIBLE_SCRIPT_URL?.trim() ||
+    'https://plausible.io/js/script.js'
   const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID?.trim()
 
   if (plausibleDomain) {
-    const { init: plausibleInit } = await import('@plausible-analytics/tracker')
-    plausibleInit({
-      domain: plausibleDomain,
-      ...(plausibleEndpoint ? { endpoint: plausibleEndpoint } : {}),
-      captureOnLocalhost: plausibleLocalhost,
-    })
+    const s = document.createElement('script')
+    s.defer = true
+    s.dataset.domain = plausibleDomain
+    s.src = plausibleScriptUrl
+    document.head.appendChild(s)
     return
   }
 

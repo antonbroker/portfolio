@@ -4,10 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import { initAnalytics } from './analytics.js'
 
-void initAnalytics().finally(() => {
-  createRoot(document.getElementById('root')).render(
-    <StrictMode>
-      <App />
-    </StrictMode>
-  )
-})
+initAnalytics()
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+)

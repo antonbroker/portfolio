@@ -27,12 +27,12 @@ Supported options (pick **one**; configure via `.env.local` locally, see `.env.e
 
 | Service | Notes |
 |--------|--------|
-| **[Plausible](https://plausible.io)** | Uses `@plausible-analytics/tracker` (NPM). Set `VITE_PLAUSIBLE_DOMAIN` to the **exact** domain you added in Plausible. Self-hosted or proxied installs: optional `VITE_PLAUSIBLE_ENDPOINT` (full URL to `/api/event`). |
+| **[Plausible](https://plausible.io)** | Injects the official `script.js` from Plausible (same as their “Script” install). Set `VITE_PLAUSIBLE_DOMAIN` to the **exact** hostname you registered in Plausible (`antoniosifov.com` and `www.antoniosifov.com` are different — pick one and match both Plausible and the secret). Self-hosted: optional `VITE_PLAUSIBLE_SCRIPT_URL` (full URL to your `script.js`). |
 | **Google Analytics 4** | Free; richer reports; you may need a cookie banner in the EU/UK. Set `VITE_GA_MEASUREMENT_ID` to your `G-` ID. |
 
-**GitHub Actions:** add repository **Secrets** (`VITE_PLAUSIBLE_DOMAIN`, optional `VITE_PLAUSIBLE_ENDPOINT`, or `VITE_GA_MEASUREMENT_ID`) so production builds include analytics. If secrets are unset, the app ships without tracking.
+**GitHub Actions:** add **Secrets** `VITE_PLAUSIBLE_DOMAIN` (and optionally `VITE_PLAUSIBLE_SCRIPT_URL` or `VITE_GA_MEASUREMENT_ID`). Vite bakes these in at **build** time — if the secret was missing when the workflow ran, the live site has no tracker until you **re-run the workflow** after adding the secret.
 
-**Plausible “Verify NPM installation”:** the package is already in `package.json`. Add `VITE_PLAUSIBLE_DOMAIN` to `.env.local`, push and deploy (or run `npm run build && npm run preview` with env vars), **open your live site once** so a pageview is sent, then click **Verify** in the Plausible wizard. Events from `localhost` are ignored by default; for local tests set `VITE_PLAUSIBLE_CAPTURE_LOCALHOST=true`.
+**If Plausible says it can’t detect the script:** (1) Confirm the secret exists and matches your Plausible site domain. (2) Re-run **Actions → Deploy to GitHub Pages → Re-run all jobs**. (3) Hard-refresh the live site (or use a private window) and disable ad blockers for your domain — they often block `plausible.io`. (4) In DevTools → Network, check for requests to `plausible.io` or your self-hosted instance.
 
 Implementation: `src/analytics.js`, invoked from `src/main.jsx`.
 
