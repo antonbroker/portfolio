@@ -29,6 +29,10 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          VITE_PLAUSIBLE_DOMAIN: ${{ secrets.VITE_PLAUSIBLE_DOMAIN }}
+          VITE_PLAUSIBLE_ENDPOINT: ${{ secrets.VITE_PLAUSIBLE_ENDPOINT }}
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
 
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
