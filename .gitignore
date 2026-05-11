@@ -1,5 +1,7 @@
 node_modules
 dist
+# local duplicate / nested folder — not part of site build
+portfolio/
 .DS_Store
 *.log
 .env
