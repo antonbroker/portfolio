@@ -14,7 +14,7 @@ export function Projects() {
         <div className="sg projects__header-grid">
           <div className="section-label"><Cap>Projects</Cap></div>
           <p className="projects__intro">
-            Personal projects built end-to-end — architecture, implementation, deployment.
+            Selected work — personal builds end-to-end, plus commercial products shipped to production.
           </p>
         </div>
       </div>
@@ -32,7 +32,14 @@ function ProjectRow({ p, open, toggle }) {
     <div ref={ref} className={`project-row ${iv ? "visible" : ""}`}>
       <div onClick={toggle} className="pr">
         <span className="project-row__idx">{p.index}</span>
-        <span className="project-row__title">{p.title}</span>
+        <span className="project-row__title-wrap">
+          <span className="project-row__title">{p.title}</span>
+          {p.commercial ? (
+            <span className="project-row__commercial" title="Client engagement — shipped to production">
+              Commercial
+            </span>
+          ) : null}
+        </span>
         <span className="project-row__year h-sm">{p.year}</span>
         <span className={`project-row__toggle ${open ? "open" : ""}`}>+</span>
       </div>
