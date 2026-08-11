@@ -1,59 +1,105 @@
-# Portfolio — React
+# Anton Iosifov — Software Engineering Portfolio
 
-Personal portfolio built with **React** and **Vite** (single-page app).
+Production-focused portfolio presenting my commercial, startup, and independent work across web, mobile, cloud, and AI-enabled products.
 
-## Run locally
+[Live portfolio](https://antoniosifov.com) · [LinkedIn](https://www.linkedin.com/in/anton-iosifov/) · [GitHub](https://github.com/antoniosifov)
 
-```bash
-npm install
-npm run dev
-```
+## Overview
 
-Open http://localhost:5173 in your browser.
+This repository contains the source for my personal portfolio. The site is a responsive, data-driven React single-page application designed to make detailed engineering case studies easy to explore.
 
-## Build
+It highlights:
 
-```bash
-npm run build
-```
+- production client platforms and independently developed products;
+- project responsibilities, architecture decisions, features, and technology stacks;
+- startup and freelance experience;
+- responsive design, light/dark themes, and scroll-based navigation;
+- automated deployment and optional privacy-conscious analytics.
 
-Output goes to `dist/`. For GitHub Pages, this repo uses **GitHub Actions** (`.github/workflows/deploy.yml`): pushes to `main` build and deploy the `dist` artifact. The `public/CNAME` file (antoniosifov.com) is copied into `dist` during the build.
+## Selected work
 
-## Visitor analytics
+### Sea'cret Residences
 
-You can see **how many people** visit, which pages they open, and rough context (country, device, referrer). You **cannot** reliably know **who** a person is (name, email) unless they sign in or submit a form — that is normal for any public website and aligns with privacy expectations.
+A production, four-language marketing and lead-generation platform for a luxury coastal real-estate development in Greece. Built with Next.js, React, TypeScript, Sanity CMS, localized SEO, analytics, accessibility improvements, and automated enquiry workflows.
 
-Supported options (pick **one**; configure via `.env.local` locally, see `.env.example`):
+[View live site](https://www.seacret-residence.com/)
 
-| Service | Notes |
-|--------|--------|
-| **[Plausible](https://plausible.io)** | Injects the official `script.js` from Plausible (same as their “Script” install). Set `VITE_PLAUSIBLE_DOMAIN` to the **exact** hostname you registered in Plausible (`antoniosifov.com` and `www.antoniosifov.com` are different — pick one and match both Plausible and the secret). Self-hosted: optional `VITE_PLAUSIBLE_SCRIPT_URL` (full URL to your `script.js`). |
-| **Google Analytics 4** | Free; richer reports; you may need a cookie banner in the EU/UK. Set `VITE_GA_MEASUREMENT_ID` to your `G-` ID. |
+### Ceru
 
-**GitHub Actions:** add **Secrets** `VITE_PLAUSIBLE_DOMAIN` (and optionally `VITE_PLAUSIBLE_SCRIPT_URL` or `VITE_GA_MEASUREMENT_ID`). Vite bakes these in at **build** time — if the secret was missing when the workflow ran, the live site has no tracker until you **re-run the workflow** after adding the secret.
+A six-language, multi-currency expense-sharing mobile app with offline-first synchronization and AI-powered voice and receipt input. Independently planned, designed, architected, and developed from concept to iOS TestFlight beta, with Android in preparation.
 
-**If Plausible says it can’t detect the script:** (1) Confirm the secret exists and matches your Plausible site domain. (2) Re-run **Actions → Deploy to GitHub Pages → Re-run all jobs**. (3) Hard-refresh the live site (or use a private window) and disable ad blockers for your domain — they often block `plausible.io`. (4) In DevTools → Network, check for requests to `plausible.io` or your self-hosted instance.
+[View product site](https://split-landing-silk.vercel.app/)
 
-Implementation: `src/analytics.js`, invoked from `src/main.jsx`.
+### Ski Shop E-Commerce Platform
 
-## Images
+A full-stack e-commerce platform with customer and admin workflows, JWT and Google authentication, analytics, and AI-powered product recommendations.
 
-Place assets under **`public/img/`**:
+[Live demo](https://e-commerce-ski.vercel.app/) · [Source](https://github.com/antoniosifov/e-commerce-ski)
 
-- `1758025908213.jpg` — photo used in About
-- `spotify.jpg`, `movie.jpg`, `commerce.jpg`, `dailyTracker.png`, `parserAPI.jpg`, `portfolio.png` — project thumbnails
-- `github.png` — GitHub button icon
-- Project screenshots live under `public/img/projects/` (see `src/data/cvData.js` for paths)
+### Factory Management System
 
-If you still have an old root-level `img/` folder from a previous version, move it to `public/img/`.
+A full-stack factory operations platform for employees, departments, shifts, authentication, reporting, and AI-assisted scheduling.
+
+[Live demo](https://factory-management-system-eight.vercel.app/) · [Source](https://github.com/antoniosifov/factory-management-system)
+
+## Technology
+
+| Area | Technologies |
+| --- | --- |
+| Application | React 18, JavaScript, HTML, CSS |
+| Tooling | Vite 5, npm |
+| Architecture | Reusable components, data-driven project content, custom React hooks |
+| Delivery | GitHub Actions, GitHub Pages, custom domain |
+| Analytics | Plausible or Google Analytics 4 through build-time configuration |
 
 ## Project structure
 
-- `src/main.jsx` — React entry
-- `src/App.jsx` — layout and sections
-- `src/components/` — Navbar, Hero, About, Experience, Stack, Projects, Gallery, Contact, Footer, ScrollLine, atoms, etc.
-- `src/data/cvData.js` — CV copy, projects, and image paths
-- `src/styles/` — section styles (`*.css`)
-- `src/hooks/` — `useScrollY`, `useInView`
-- `src/index.css` — global base styles
+```text
+src/
+├── components/       # Page sections, navigation, gallery, and UI atoms
+├── data/cvData.js    # Skills, projects, experience, and education content
+├── hooks/            # Scroll and intersection-observer hooks
+├── styles/           # Section and global styles
+├── App.jsx           # Page composition and active-section state
+└── main.jsx          # React entry point and analytics initialization
+```
 
+## Run locally
+
+Requirements: Node.js 20+ and npm.
+
+```bash
+git clone https://github.com/antoniosifov/portfolio.git
+cd portfolio
+npm ci
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173).
+
+Create a production build with:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/deploy.yml`. It installs dependencies, creates the Vite production build, and deploys the `dist` artifact to GitHub Pages. The custom domain is configured through `public/CNAME`.
+
+## Optional analytics
+
+Analytics are disabled when no variables are provided. To enable one provider, configure the appropriate variables locally in `.env.local` and as GitHub Actions secrets for production.
+
+| Variable | Purpose |
+| --- | --- |
+| `VITE_PLAUSIBLE_DOMAIN` | Domain registered in Plausible |
+| `VITE_PLAUSIBLE_SCRIPT_URL` | Optional custom or self-hosted Plausible script |
+| `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID |
+
+## Contact
+
+- [antoniosifov.com](https://antoniosifov.com)
+- [linkedin.com/in/anton-iosifov](https://www.linkedin.com/in/anton-iosifov/)
+- [github.com/antoniosifov](https://github.com/antoniosifov)

@@ -11,8 +11,8 @@ export function Hero() {
     <section id="home" className="hero">
       <div className="hero__container">
         <div className={`hero-strip ${m}`}>
-          <Cap>Full-Stack Developer</Cap>
-          <Cap>Tel Aviv, Israel</Cap>
+          <Cap>Full-Stack Software Engineer</Cap>
+          <Cap>Israel · Remote</Cap>
           <Cap>Open to work</Cap>
         </div>
 
@@ -24,10 +24,9 @@ export function Hero() {
 
         <div className={`hero-bottom ${m}`}>
           <p className="hero__desc">
-            Full-Stack Developer with a strong backend focus and production experience in startup environments.
-            I build scalable systems, design clean architectures, and turn complex requirements into reliable digital products.
+            I build production-ready web, mobile, cloud, and AI-enabled products across frontend, backend, data, integrations, and deployment.
             <br /><br />
-            Driven by impact, ownership, and continuous growth.
+            From requirements and architecture to testing and production support, I take ownership of the complete engineering lifecycle.
           </p>
           <div className="hero__buttons">
             <a href="#projects" className="hero__btn-primary">View Projects</a>
