@@ -5,7 +5,7 @@ import "../styles/contact.css";
 const links = [
   { label: "Email",    href: "mailto:iosifov.a.14@gmail.com",         sub: "iosifov.a.14@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/anton-iosifov/", sub: "in/anton-iosifov" },
-  { label: "GitHub",   href: "https://github.com/antonbroker",         sub: "antonbroker"            },
+  { label: "GitHub",   href: "https://github.com/antoniosifov",        sub: "antoniosifov"           },
   { label: "WhatsApp", href: "https://wa.me/972534223948",             sub: "+972 534 223 948"       },
 ];
 

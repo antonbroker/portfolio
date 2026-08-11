@@ -18,10 +18,10 @@ export function About() {
           </div>
           <div className="about__info-grid">
             {[
-              ["B.Sc.  Computer Science", "HIT · GPA 88"],
-              ["Stack", "Full-Stack"],
-              ["Languages", "EN  ·  HE  ·  RU"],
-              ["Status", "Open to work"],
+              ["B.Sc. Computer Science", "HIT · Grade 90"],
+              ["Focus", "Full-Stack Engineering"],
+              ["Languages", "English · Hebrew · Russian"],
+              ["Availability", "Israel · Remote"],
             ].map(([k, v]) => (
               <div key={k} className="about__info-cell">
                 <div className="about__info-key">{k}</div>
@@ -33,12 +33,12 @@ export function About() {
 
         <div>
           <h2 className="about__heading">
-            Writing code<br /><em>that ships.</em>
+            Thinking in systems.<br /><em>Building in code.</em>
           </h2>
           {[
-            "Full-Stack Developer with a Computer Science degree from HIT and hands-on startup experience. I've worked in a real production environment — contributing to a Laravel-based SaaS product, building data pipelines, and working within an Agile team.",
-            "My personal projects go deeper: Node.js/Express backends with clean layered architecture, React frontends with TypeScript, MongoDB with aggregation pipelines, and OpenAI API integration for real features — not demos.",
-            "I care about code quality, clear architecture, and actually shipping things. Fluent in English, Hebrew, and Russian.",
+            "I'm a Full-Stack Software Engineer based in Israel, building reliable, production-ready software across frontend, backend, data, integrations, and deployment.",
+            "My experience spans a product startup, commercial freelance development, and independent products. I work across the delivery lifecycle — from requirements and system design through implementation, testing, deployment, and production support.",
+            "I use AI-assisted engineering and agentic workflows to accelerate research, implementation, and testing while maintaining ownership of architecture, validation, and code quality.",
           ].map((p, i) => (
             <p key={i} className="about__text">{p}</p>
           ))}
