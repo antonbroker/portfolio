@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { additionalProjects, projects, type Project } from "@/data/portfolio";
 import { SectionHeading } from "./SectionHeading";
 
@@ -100,6 +100,28 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Projects() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [activeProject, setActiveProject] = useState(0);
+
+  const goToProject = (index: number) => {
+    const nextIndex = Math.max(0, Math.min(projects.length - 1, index));
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    carousel.scrollTo({
+      left: carousel.clientWidth * nextIndex,
+      behavior: "smooth",
+    });
+    setActiveProject(nextIndex);
+  };
+
+  const handleCarouselScroll = () => {
+    const carousel = carouselRef.current;
+    if (!carousel || carousel.clientWidth === 0) return;
+    const nextIndex = Math.round(carousel.scrollLeft / carousel.clientWidth);
+    setActiveProject(Math.max(0, Math.min(projects.length - 1, nextIndex)));
+  };
+
   return (
     <section id="projects" className="section projects-section">
       <div className="shell">
@@ -110,7 +132,38 @@ export function Projects() {
           description="Commercial client work, independent products, and focused engineering projects — described by outcome first, implementation second."
         />
 
-        <div className="projects-list">
+        <div className="projects-carousel-controls" aria-label="Project carousel controls">
+          <p>
+            <span>{String(activeProject + 1).padStart(2, "0")}</span>
+            <i>/</i>
+            {String(projects.length).padStart(2, "0")}
+          </p>
+          <div>
+            <button
+              type="button"
+              aria-label="Show previous project"
+              disabled={activeProject === 0}
+              onClick={() => goToProject(activeProject - 1)}
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              aria-label="Show next project"
+              disabled={activeProject === projects.length - 1}
+              onClick={() => goToProject(activeProject + 1)}
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        <div
+          className="projects-list"
+          ref={carouselRef}
+          onScroll={handleCarouselScroll}
+          aria-label="Selected projects carousel"
+        >
           {projects.map((project) => (
             <ProjectCard key={project.index} project={project} />
           ))}

@@ -7,11 +7,6 @@ export function Hero() {
       <HeroThreads />
 
       <div className="hero-content shell">
-        <div className="hero-kicker">
-          <span className="status-dot" aria-hidden="true" />
-          Available for full-time and selected freelance work
-        </div>
-
         <div className="hero-copy">
           <p className="hero-role">Anton Iosifov · Full-Stack Software Engineer</p>
           <h1 id="hero-title">

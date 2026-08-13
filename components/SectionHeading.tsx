@@ -10,7 +10,7 @@ export function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="section-heading">
+    <div className={`section-heading ${description ? "has-description" : "no-description"}`}>
       <div className="section-number">{number}</div>
       <div>
         <p className="section-eyebrow">{eyebrow}</p>

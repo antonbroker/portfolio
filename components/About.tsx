@@ -17,7 +17,6 @@ export function About() {
           number="01"
           eyebrow="About"
           title="Thinking in systems. Building in code."
-          description="I sit comfortably across the stack and stay accountable for what happens after the code ships."
         />
 
         <Reveal className="about-layout">
@@ -35,24 +34,34 @@ export function About() {
 
           <div className="about-copy">
             <p className="about-lead">
-              I’m a Full-Stack Software Engineer building reliable, production-ready software
-              across frontend, backend, data, integrations, and deployment.
+              I’m a Full-Stack Software Engineer based in Israel, building reliable,
+              production-ready software across frontend, backend, data, integrations, and
+              deployment.
             </p>
             <p>
-              My background combines startup product development, commercial freelance work,
-              and independent products. Today I deliver multilingual platforms, architect a
-              real-estate CRM, build mobile software, and integrate AI where it creates real
-              product value.
+              My experience spans a product startup, commercial freelance development, and
+              independent product development.
             </p>
             <p>
-              I work across the complete delivery lifecycle: requirements, system design, UI,
-              backend architecture, APIs, databases, authentication, automated testing,
-              analytics, deployment, and production monitoring.
+              At Platforma365, I worked across the stack on internal SaaS products, developing
+              JavaScript frontend features, REST APIs, Laravel backend services, and MySQL-based
+              data-processing workflows.
             </p>
             <p>
-              AI-assisted engineering and agentic workflows accelerate my research,
-              implementation, and validation. Architecture, testing, security, and code quality
-              remain my responsibility.
+              Today, I build client and independent products ranging from multilingual business
+              platforms and a custom real-estate CRM to Ceru, a six-language expense-sharing
+              mobile app, and AI-enabled workflows for real businesses.
+            </p>
+            <p>
+              I work across the software delivery lifecycle: requirements analysis, system
+              design, UI and frontend development, backend architecture, APIs, databases,
+              authentication, AI integrations, automated testing, analytics, deployment, and
+              production monitoring.
+            </p>
+            <p>
+              I use AI-assisted engineering and agentic workflows to accelerate research,
+              implementation, testing, and delivery while maintaining ownership of architecture,
+              validation, security, and code quality.
             </p>
 
             <dl className="about-facts">
