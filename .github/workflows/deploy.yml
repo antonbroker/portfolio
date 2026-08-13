@@ -30,14 +30,13 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          VITE_PLAUSIBLE_DOMAIN: ${{ secrets.VITE_PLAUSIBLE_DOMAIN }}
-          VITE_PLAUSIBLE_SCRIPT_URL: ${{ secrets.VITE_PLAUSIBLE_SCRIPT_URL }}
-          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ secrets.PLAUSIBLE_DOMAIN }}
+          NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL: ${{ secrets.PLAUSIBLE_SCRIPT_URL }}
 
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: out
 
       - id: deployment
         uses: actions/deploy-pages@v4

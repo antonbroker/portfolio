@@ -1,72 +1,75 @@
 # Anton Iosifov — Software Engineering Portfolio
 
-Production-focused portfolio presenting my commercial, startup, and independent work across web, mobile, cloud, and AI-enabled products.
+A production-focused portfolio presenting commercial, startup, and independent work across web, mobile, cloud, and AI-enabled systems.
 
 [Live portfolio](https://antoniosifov.com) · [LinkedIn](https://www.linkedin.com/in/anton-iosifov/) · [GitHub](https://github.com/antoniosifov)
 
 ## Overview
 
-This repository contains the source for my personal portfolio. The site is a responsive, data-driven React single-page application designed to make detailed engineering case studies easy to explore.
+The site is a statically exported Next.js application built to load quickly, remain accessible, and present detailed engineering work without turning the portfolio into a wall of technology names.
 
-It highlights:
+It includes:
 
 - production client platforms and independently developed products;
-- project responsibilities, architecture decisions, features, and technology stacks;
-- startup and freelance experience;
-- responsive design, light/dark themes, and scroll-based navigation;
-- automated deployment and optional privacy-conscious analytics.
+- outcome-first project summaries with expandable engineering notes;
+- startup, freelance, education, and certification history;
+- responsive navigation and keyboard-accessible interactions;
+- image lazy loading and optimized WebP assets;
+- complete social metadata, JSON-LD, sitemap, robots, and manifest;
+- optional privacy-conscious analytics;
+- automated deployment to GitHub Pages with a custom domain.
 
 ## Selected work
 
-### Sea'cret Residences
-
-A production, four-language marketing and lead-generation platform for a luxury coastal real-estate development in Greece. Built with Next.js, React, TypeScript, Sanity CMS, localized SEO, analytics, accessibility improvements, and automated enquiry workflows.
-
-[View live site](https://www.seacret-residence.com/)
-
-### Ceru
-
-A six-language, multi-currency expense-sharing mobile app with offline-first synchronization and AI-powered voice and receipt input. Independently planned, designed, architected, and developed from concept to iOS TestFlight beta, with Android in preparation.
-
-[View product site](https://split-landing-silk.vercel.app/)
-
-### Ski Shop E-Commerce Platform
-
-A full-stack e-commerce platform with customer and admin workflows, JWT and Google authentication, analytics, and AI-powered product recommendations.
-
-[Live demo](https://e-commerce-ski.vercel.app/) · [Source](https://github.com/antoniosifov/e-commerce-ski)
-
-### Factory Management System
-
-A full-stack factory operations platform for employees, departments, shifts, authentication, reporting, and AI-assisted scheduling.
-
-[Live demo](https://factory-management-system-eight.vercel.app/) · [Source](https://github.com/antoniosifov/factory-management-system)
+| Project | Summary | Links |
+| --- | --- | --- |
+| Ceru | Six-language, multi-currency mobile expense sharing with offline-first sync and AI-powered voice and receipt input | [Product site](https://ceruapp.com/) |
+| Sea’cret Residences | Four-language real-estate marketing and lead-generation platform with Sanity CMS, SEO/GEO, analytics, accessibility, and enquiry workflows | [Live site](https://www.seacret-residence.com/) |
+| Campus42 | Interactive student-housing platform with floor and studio selection, CMS content, localization, SEO/GEO, and transactional enquiries | [Live site](https://campus42.gr/en) |
+| AWS EC2 Observability | Interactive dashboard for CloudWatch CPU, network, disk, credit, and health metrics | [Demo](https://aws-cpu-utilization-metrics-six.vercel.app/) · [Source](https://github.com/antoniosifov/aws-cpu-utilization-metrics) |
+| Agentic RAG Assistant | Grounded enterprise knowledge assistant with cited sources, relevance scores, and explicit fallback disclosure | [App](https://rag-chat-frontend-sigma.vercel.app/) · [Backend](https://github.com/antoniosifov/rag-chat-backend) |
+| Ski Shop | Full-stack e-commerce with customer and admin workflows, analytics, authentication, and AI recommendations | [Demo](https://e-commerce-ski.vercel.app/) · [Source](https://github.com/antoniosifov/e-commerce-ski) |
 
 ## Technology
 
 | Area | Technologies |
 | --- | --- |
-| Application | React 18, JavaScript, HTML, CSS |
-| Tooling | Vite 5, npm |
-| Architecture | Reusable components, data-driven project content, custom React hooks |
+| Framework | Next.js 16 App Router, React 19 |
+| Language | TypeScript 5 |
+| Rendering | Static export for GitHub Pages |
+| Animation | OGL WebGL hero background, CSS transitions and motion fallbacks |
 | Delivery | GitHub Actions, GitHub Pages, custom domain |
-| Analytics | Plausible or Google Analytics 4 through build-time configuration |
+| Quality | Strict TypeScript, semantic HTML, reduced-motion support, responsive QA |
 
 ## Project structure
 
 ```text
-src/
-├── components/       # Page sections, navigation, gallery, and UI atoms
-├── data/cvData.js    # Skills, projects, experience, and education content
-├── hooks/            # Scroll and intersection-observer hooks
-├── styles/           # Section and global styles
-├── App.jsx           # Page composition and active-section state
-└── main.jsx          # React entry point and analytics initialization
+app/
+|-- layout.tsx          # Global metadata, analytics, JSON-LD, and root layout
+|-- page.tsx            # Semantic page composition
+|-- globals.css         # Design system, layout, animation, and responsive styles
+|-- robots.ts           # Static robots metadata route
+|-- sitemap.ts          # Static sitemap metadata route
+`-- manifest.ts         # Web app manifest
+components/
+|-- HeroThreads.tsx     # Lazy, visibility-aware WebGL animation
+|-- Projects.tsx        # Accessible project case studies and lazy galleries
+`-- ...                 # Page sections and reusable UI
+data/
+`-- portfolio.ts        # Typed portfolio content
+public/
+|-- img/                # Optimized project and profile media
+|-- og-image.png        # Social sharing image
+|-- Anton_Iosifov_CV.pdf
+`-- CNAME               # GitHub Pages custom domain
+scripts/
+|-- optimize-images.mjs
+`-- create-og-image.mjs
 ```
 
 ## Run locally
 
-Requirements: Node.js 20+ and npm.
+Requirements: Node.js 20.9+ and npm.
 
 ```bash
 git clone https://github.com/antoniosifov/portfolio.git
@@ -75,28 +78,33 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Open [http://localhost:3000](http://localhost:3000).
 
-Create a production build with:
+Validate a production build with:
 
 ```bash
+npm run typecheck
 npm run build
-npm run preview
 ```
+
+The static export is generated in `out/`.
 
 ## Deployment
 
-Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/deploy.yml`. It installs dependencies, creates the Vite production build, and deploys the `dist` artifact to GitHub Pages. The custom domain is configured through `public/CNAME`.
+Pushes to `main` trigger `.github/workflows/deploy.yml`. The workflow installs dependencies, builds the static Next.js export, and deploys `out/` to GitHub Pages. The custom domain is retained through `public/CNAME`.
 
 ## Optional analytics
 
-Analytics are disabled when no variables are provided. To enable one provider, configure the appropriate variables locally in `.env.local` and as GitHub Actions secrets for production.
+Analytics stay disabled unless the following variables are configured locally and as GitHub Actions secrets:
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_PLAUSIBLE_DOMAIN` | Domain registered in Plausible |
-| `VITE_PLAUSIBLE_SCRIPT_URL` | Optional custom or self-hosted Plausible script |
-| `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Domain registered in Plausible |
+| `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL` | Optional custom or self-hosted Plausible script |
+
+## Animation attribution
+
+The hero’s WebGL line field is adapted from the open-source [React Bits Threads component](https://github.com/DavidHDev/react-bits) by David Haz and used under its MIT + Commons Clause license. The component has been modified for static Next.js delivery, reduced-motion support, capped render resolution, visibility-aware rendering, and the portfolio’s visual system. The required license text is preserved in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Contact
 
