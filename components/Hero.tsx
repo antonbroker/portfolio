@@ -1,10 +1,10 @@
-import { HeroThreads } from "./HeroThreads";
+import { HeroScene } from "./HeroScene";
 
 export function Hero() {
   return (
     <section id="home" className="hero" aria-labelledby="hero-title">
       <div className="hero-grid" aria-hidden="true" />
-      <HeroThreads />
+      <HeroScene />
 
       <div className="hero-content shell">
         <div className="hero-copy">

@@ -37,7 +37,7 @@ It includes:
 | Framework | Next.js 16 App Router, React 19 |
 | Language | TypeScript 5 |
 | Rendering | Static export for GitHub Pages |
-| Animation | OGL WebGL hero background, CSS transitions and motion fallbacks |
+| Animation | Layered CSS hero sequence, transitions, and reduced-motion fallbacks |
 | Delivery | GitHub Actions, GitHub Pages, custom domain |
 | Quality | Strict TypeScript, semantic HTML, reduced-motion support, responsive QA |
 
@@ -52,7 +52,7 @@ app/
 |-- sitemap.ts          # Static sitemap metadata route
 `-- manifest.ts         # Web app manifest
 components/
-|-- HeroThreads.tsx     # Lazy, visibility-aware WebGL animation
+|-- HeroScene.tsx       # Optimized, layered cinematic hero sequence
 |-- Projects.tsx        # Accessible project case studies and lazy galleries
 `-- ...                 # Page sections and reusable UI
 data/
@@ -101,10 +101,6 @@ Analytics stay disabled unless the following variables are configured locally an
 | --- | --- |
 | `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Domain registered in Plausible |
 | `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL` | Optional custom or self-hosted Plausible script |
-
-## Animation attribution
-
-The hero’s WebGL line field is adapted from the open-source [React Bits Threads component](https://github.com/DavidHDev/react-bits) by David Haz and used under its MIT + Commons Clause license. The component has been modified for static Next.js delivery, reduced-motion support, capped render resolution, visibility-aware rendering, and the portfolio’s visual system. The required license text is preserved in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Contact
 
