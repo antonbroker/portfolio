@@ -23,6 +23,7 @@ export function Header() {
       >
         <span />
         <span />
+        <span />
       </button>
 
       <nav id="site-navigation" className={open ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">

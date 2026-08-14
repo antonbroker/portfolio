@@ -173,6 +173,9 @@ ul {
 
 .menu-button {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
   width: 44px;
   height: 44px;
   padding: 13px 11px;
@@ -185,7 +188,6 @@ ul {
   display: block;
   width: 100%;
   height: 1px;
-  margin: 5px 0;
   background: var(--white);
 }
 
@@ -1401,7 +1403,7 @@ ul {
     box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
   }
   .site-nav.is-open a { padding: 14px 10px; border-bottom: 1px solid var(--line-dark); }
-  .menu-button { display: block; grid-column: 2; }
+  .menu-button { display: flex; grid-column: 2; }
   .header-contact { justify-self: end; }
 
   .hero-content { grid-template-columns: minmax(0, 1fr) 260px; }
