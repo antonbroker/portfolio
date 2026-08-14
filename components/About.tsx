@@ -19,7 +19,7 @@ export function About() {
           title="Thinking in systems. Building in code."
         />
 
-        <Reveal className="about-layout">
+        <Reveal className="about-layout section-content">
           <div className="about-portrait">
             <div className="about-image-frame">
               <Image

@@ -13,7 +13,7 @@ export function Experience() {
           description="Commercial freelance delivery, startup product work, and focused full-stack training built on a computer-science foundation."
         />
 
-        <div className="timeline">
+        <div className="timeline section-content">
           {experience.map((item) => (
             <Reveal className="timeline-item" key={`${item.company}-${item.period}`}>
               <div className="timeline-period">{item.period}</div>
@@ -31,7 +31,7 @@ export function Experience() {
           ))}
         </div>
 
-        <div className="education-block">
+        <div className="education-block section-content">
           <div className="education-title">
             <span>05</span>
             <h2>Education & certification</h2>

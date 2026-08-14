@@ -13,7 +13,7 @@ export function Stack() {
           description="Strongest in TypeScript, React, Next.js, and Node.js — with practical delivery across mobile, data, cloud, and applied AI."
         />
 
-        <div className="stack-groups">
+        <div className="stack-groups section-content">
           {stackGroups.map((group) => (
             <Reveal className="stack-group" key={group.label}>
               <div className="stack-group-head">

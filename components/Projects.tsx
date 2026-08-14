@@ -132,7 +132,10 @@ export function Projects() {
           description="Commercial client work, independent products, and focused engineering projects — described by outcome first, implementation second."
         />
 
-        <div className="projects-carousel-controls" aria-label="Project carousel controls">
+        <div
+          className="projects-carousel-controls section-content"
+          aria-label="Project carousel controls"
+        >
           <div>
             <button
               type="button"
@@ -154,7 +157,7 @@ export function Projects() {
         </div>
 
         <div
-          className="projects-list"
+          className="projects-list section-content"
           ref={carouselRef}
           onScroll={handleCarouselScroll}
           aria-label="Selected projects carousel"
@@ -164,7 +167,7 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="additional-work">
+        <div className="additional-work section-content">
           <div className="additional-work-heading">
             <p>Additional work</p>
             <h3>More systems, shipped.</h3>
