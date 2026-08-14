@@ -133,11 +133,6 @@ export function Projects() {
         />
 
         <div className="projects-carousel-controls" aria-label="Project carousel controls">
-          <p>
-            <span>{String(activeProject + 1).padStart(2, "0")}</span>
-            <i>/</i>
-            {String(projects.length).padStart(2, "0")}
-          </p>
           <div>
             <button
               type="button"

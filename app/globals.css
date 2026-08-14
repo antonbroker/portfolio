@@ -649,14 +649,7 @@ ul {
 .stack-group-head {
   display: flex;
   align-items: baseline;
-  gap: 18px;
   margin-bottom: 54px;
-}
-
-.stack-group-head span {
-  color: var(--coral);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 10px;
 }
 
 .stack-group h3 {
@@ -720,30 +713,9 @@ ul {
 .projects-carousel-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 28px;
   padding: 0 0 16px;
-}
-
-.projects-carousel-controls p {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-}
-
-.projects-carousel-controls p span {
-  color: var(--coral);
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.projects-carousel-controls p i {
-  font-style: normal;
-  opacity: 0.45;
 }
 
 .projects-carousel-controls > div {
@@ -1029,8 +1001,7 @@ ul {
   grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
   gap: 54px;
   margin-top: 116px;
-  padding-top: 42px;
-  border-top: 1px solid var(--line-dark);
+  padding-top: 0;
 }
 
 .additional-work-heading p {

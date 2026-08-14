@@ -14,10 +14,9 @@ export function Stack() {
         />
 
         <div className="stack-groups">
-          {stackGroups.map((group, groupIndex) => (
+          {stackGroups.map((group) => (
             <Reveal className="stack-group" key={group.label}>
               <div className="stack-group-head">
-                <span>{String(groupIndex + 1).padStart(2, "0")}</span>
                 <h3>{group.label}</h3>
               </div>
               <ul>
