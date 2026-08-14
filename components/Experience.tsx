@@ -7,7 +7,7 @@ export function Experience() {
     <section id="experience" className="section section-paper experience-section">
       <div className="shell">
         <SectionHeading
-          number="04"
+          number="02"
           eyebrow="Experience"
           title="Ownership from brief to production support."
           description="Commercial freelance delivery, startup product work, and focused full-stack training built on a computer-science foundation."
@@ -33,7 +33,6 @@ export function Experience() {
 
         <div className="education-block section-content">
           <div className="education-title">
-            <span>05</span>
             <h2>Education & certification</h2>
           </div>
           <div>
