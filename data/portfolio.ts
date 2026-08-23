@@ -6,6 +6,8 @@ export type Project = {
   type: string;
   status: string;
   description: string;
+  statement: string;
+  presentation: "web" | "mobile" | "dashboard";
   stack: string[];
   highlights: string[];
   live?: string;
@@ -53,6 +55,8 @@ export const projects: Project[] = [
     status: "iOS TestFlight beta · Android in preparation",
     description:
       "A six-language, multi-currency expense-sharing app that I independently planned, designed, architected, and developed from concept to iOS beta.",
+    statement: "Six languages. Multiple currencies. One shared version of the truth.",
+    presentation: "mobile",
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "SQLite", "OpenAI", "Sentry"],
     highlights: [
       "Flexible group expenses, balances, settlements, analytics, notifications, and PDF/Excel exports.",
@@ -79,6 +83,8 @@ export const projects: Project[] = [
     status: "Live · Greece",
     description:
       "A production four-language marketing and lead-generation platform for a luxury coastal real-estate development, delivered from requirements through launch.",
+    statement: "Four languages, one clear path from discovery to enquiry.",
+    presentation: "web",
     stack: ["Next.js", "React", "TypeScript", "Sanity", "Resend", "Vercel", "PostHog"],
     highlights: [
       "Four-language localization, CMS-managed content, responsive property discovery, and structured enquiry workflows.",
@@ -105,6 +111,8 @@ export const projects: Project[] = [
     status: "Live · Greece",
     description:
       "A bilingual student-housing and lead-generation platform for an 83-studio development in Patras, independently delivered from planning through production.",
+    statement: "A building with a story, translated into an interactive digital experience.",
+    presentation: "web",
     stack: ["Next.js", "React", "TypeScript", "Sanity", "Resend", "Vercel"],
     highlights: [
       "Interactive floor and studio selection with availability, layouts, photography, and 3D tours.",
@@ -125,6 +133,8 @@ export const projects: Project[] = [
     status: "Live interactive demo",
     description:
       "An interactive observability dashboard for exploring EC2 CPU, network, disk I/O, credit, and health metrics from Amazon CloudWatch.",
+    statement: "CloudWatch telemetry made readable before it becomes urgent.",
+    presentation: "dashboard",
     stack: ["React", "AWS EC2", "CloudWatch", "AWS SDK", "Chart.js", "Vercel"],
     highlights: [
       "Turns raw CloudWatch telemetry into a focused operations view with time-range and instance controls.",
@@ -146,6 +156,8 @@ export const projects: Project[] = [
     status: "Live full-stack deployment",
     description:
       "An agentic knowledge assistant that retrieves, cites, and reasons over an indexed enterprise knowledge base while disclosing general-knowledge fallback.",
+    statement: "Grounded answers, visible sources, and honest fallback behavior.",
+    presentation: "dashboard",
     stack: ["Next.js", "TypeScript", "FastAPI", "LangChain", "OpenAI", "MongoDB Atlas Vector Search"],
     highlights: [
       "Multi-turn chat with grounded answers, cited sources, relevance scores, and explicit fallback status.",
@@ -165,6 +177,8 @@ export const projects: Project[] = [
     status: "Live demo",
     description:
       "A winter-sports commerce platform with separate customer and admin workflows, advanced catalog filtering, analytics, and AI-powered recommendations.",
+    statement: "One product surface for customers, inventory, operations, and recommendations.",
+    presentation: "web",
     stack: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT", "OpenAI"],
     highlights: [
       "Product discovery, cart, checkout, order history, customer profiles, and protected admin operations.",

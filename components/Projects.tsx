@@ -4,16 +4,33 @@ import { useRef, useState } from "react";
 import { additionalProjects, projects, type Project } from "@/data/portfolio";
 import { SectionHeading } from "./SectionHeading";
 
-function ProjectCard({ project }: { project: Project }) {
-  const [open, setOpen] = useState(false);
-  const detailsId = `project-details-${project.index}`;
+function ProjectVisual({ project }: { project: Project }) {
+  if (project.presentation === "mobile") {
+    const screens = project.gallery?.slice(0, 2) ?? [];
+
+    return (
+      <div className="project-mobile-showcase">
+        {screens.map((screen, index) => (
+          <div className={`device-phone ${index === 0 ? "is-back" : "is-front"}`} key={screen.src}>
+            <span className="device-phone-speaker" aria-hidden="true" />
+            <img
+              src={screen.src}
+              alt={screen.alt}
+              width="430"
+              height="932"
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <article className={`project-card accent-${project.accent} ${open ? "is-open" : ""}`}>
-      <div className="project-card-main">
-        <div className="project-index">{project.index}</div>
-
-        <div className="project-media">
+    <div className={`project-device-showcase is-${project.presentation}`}>
+      <div className="device-laptop">
+        <div className="device-laptop-screen">
           {project.cover ? (
             <img
               src={project.cover}
@@ -31,16 +48,51 @@ function ProjectCard({ project }: { project: Project }) {
               <i />
             </div>
           )}
-          <span className="project-type">{project.type}</span>
+        </div>
+        <span className="device-laptop-base" aria-hidden="true" />
+      </div>
+
+      {project.presentation === "web" && project.cover ? (
+        <div className="device-phone is-web-preview">
+          <span className="device-phone-speaker" aria-hidden="true" />
+          <img
+            src={project.cover}
+            alt={`${project.shortTitle} mobile preview`}
+            width="430"
+            height="932"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  const [open, setOpen] = useState(false);
+  const detailsId = `project-details-${project.index}`;
+
+  return (
+    <article className={`project-card accent-${project.accent} ${open ? "is-open" : ""}`}>
+      <div className="project-card-main">
+        <div className="project-media">
+          <ProjectVisual project={project} />
         </div>
 
         <div className="project-copy">
-          <div className="project-meta">
-            <span>{project.year}</span>
-            <span>{project.status}</span>
+          <div className="project-topline">
+            <p>
+              {project.type} <span aria-hidden="true">/</span> {project.status}
+            </p>
+            <span className="project-index">
+              <i aria-hidden="true" />
+              {project.index}
+            </span>
           </div>
           <h3>{project.title}</h3>
           <p>{project.description}</p>
+          <p className="project-statement">{project.statement}</p>
           <ul className="project-stack" aria-label={`${project.title} technologies`}>
             {project.stack.map((item) => (
               <li key={item}>{item}</li>
@@ -63,7 +115,7 @@ function ProjectCard({ project }: { project: Project }) {
               aria-controls={detailsId}
               onClick={() => setOpen((value) => !value)}
             >
-              {open ? "Close case notes" : "Open case notes"}
+              {open ? "Close case notes" : "Case notes"}
               <span aria-hidden="true">{open ? "−" : "+"}</span>
             </button>
           </div>
@@ -133,30 +185,6 @@ export function Projects() {
         />
 
         <div
-          className="projects-carousel-controls section-content"
-          aria-label="Project carousel controls"
-        >
-          <div>
-            <button
-              type="button"
-              aria-label="Show previous project"
-              disabled={activeProject === 0}
-              onClick={() => goToProject(activeProject - 1)}
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              aria-label="Show next project"
-              disabled={activeProject === projects.length - 1}
-              onClick={() => goToProject(activeProject + 1)}
-            >
-              →
-            </button>
-          </div>
-        </div>
-
-        <div
           className="projects-list section-content"
           ref={carouselRef}
           onScroll={handleCarouselScroll}
@@ -167,7 +195,32 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="additional-work section-content">
+        <div className="projects-carousel-footer section-content">
+          <div className="projects-carousel-controls" aria-label="Project carousel controls">
+            <button
+              type="button"
+              aria-label="Show previous project"
+              disabled={activeProject === 0}
+              onClick={() => goToProject(activeProject - 1)}
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <button
+              type="button"
+              aria-label="Show next project"
+              disabled={activeProject === projects.length - 1}
+              onClick={() => goToProject(activeProject + 1)}
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <a className="projects-view-all" href="#additional-work">
+            View all work <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div id="additional-work" className="additional-work section-content">
           <div className="additional-work-heading">
             <p>Additional work</p>
             <h3>More systems, shipped.</h3>
